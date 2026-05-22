@@ -3,6 +3,7 @@ import ComplaintCard from "../components/ComplaintCard";
 
 function MyComplaints() {
   const [searchTerm, setSearchTerm] = useState("");
+  const [statusFilter, setStatusFilter] = useState("All");
 
   const complaints = [
     {
@@ -35,32 +36,66 @@ function MyComplaints() {
     },
   ];
 
-  const filteredComplaints = complaints.filter((complaint) =>
-    complaint.title.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const filteredComplaints = complaints.filter((complaint) => {
+
+    const matchesSearch =
+      complaint.title
+        .toLowerCase()
+        .includes(searchTerm.toLowerCase());
+
+    const matchesStatus =
+      statusFilter === "All" ||
+      complaint.status === statusFilter;
+
+    return matchesSearch && matchesStatus;
+  });
 
   return (
     <div>
 
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
+      {/* Top Section */}
+
+      <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 mb-6">
 
         <h1 className="text-3xl font-bold text-white">
           My Complaints
         </h1>
 
-        <input
-          type="text"
-          placeholder="Search complaints..."
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          className="bg-slate-800 text-white px-4 py-3 rounded-xl outline-none focus:ring-2 focus:ring-blue-500 w-full sm:w-80"
-        />
+        <div className="flex flex-col sm:flex-row gap-4">
+
+          {/* Search */}
+
+          <input
+            type="text"
+            placeholder="Search complaints..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className="bg-slate-800 text-white px-4 py-3 rounded-xl outline-none focus:ring-2 focus:ring-blue-500 w-full sm:w-72"
+          />
+
+          {/* Filter */}
+
+          <select
+            value={statusFilter}
+            onChange={(e) => setStatusFilter(e.target.value)}
+            className="bg-slate-800 text-white px-4 py-3 rounded-xl outline-none focus:ring-2 focus:ring-blue-500"
+          >
+            <option value="All">All Status</option>
+            <option value="Pending">Pending</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Resolved">Resolved</option>
+          </select>
+
+        </div>
 
       </div>
+
+      {/* Complaint Cards */}
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
 
         {filteredComplaints.length > 0 ? (
+
           filteredComplaints.map((complaint, index) => (
             <ComplaintCard
               key={index}
@@ -71,10 +106,13 @@ function MyComplaints() {
               date={complaint.date}
             />
           ))
+
         ) : (
+
           <p className="text-slate-400">
             No complaints found.
           </p>
+
         )}
 
       </div>
