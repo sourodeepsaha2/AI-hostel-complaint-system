@@ -1,23 +1,22 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const navigate = useNavigate();
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    console.log({
-      email,
-      password,
-    });
+    navigate("/dashboard");
   };
 
   return (
     <div className="min-h-screen bg-slate-900 flex items-center justify-center px-4">
       <div className="bg-slate-800 p-8 rounded-2xl shadow-lg w-full max-w-md">
-        
+
         <h1 className="text-3xl font-bold text-white text-center mb-2">
           Hostel Complaint System
         </h1>
@@ -27,7 +26,7 @@ function Login() {
         </p>
 
         <form onSubmit={handleSubmit} className="space-y-5">
-          
+
           <div>
             <label className="block text-slate-300 mb-2">
               Email
@@ -62,6 +61,7 @@ function Login() {
           >
             Login
           </button>
+
         </form>
 
         <p className="text-slate-400 text-center mt-6">
@@ -73,6 +73,7 @@ function Login() {
             Register
           </Link>
         </p>
+
       </div>
     </div>
   );

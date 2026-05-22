@@ -4,6 +4,8 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
 import MyComplaints from "./pages/MyComplaints";
+import CreateComplaint from "./pages/CreateComplaint";
+import ComplaintDetails from "./pages/ComplaintDetails";
 
 import MainLayout from "./layouts/MainLayout";
 
@@ -29,6 +31,24 @@ function App() {
         element={
           <MainLayout>
             <MyComplaints />
+          </MainLayout>
+        }
+      />
+
+      <Route
+        path="/create-complaint"
+        element={
+          <MainLayout>
+            <CreateComplaint />
+          </MainLayout>
+        }
+      />
+
+      <Route
+        path="/complaint/:id"
+        element={
+          <MainLayout>
+            <ComplaintDetails />
           </MainLayout>
         }
       />

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Register() {
   const [formData, setFormData] = useState({
@@ -8,6 +8,8 @@ function Register() {
     roomNumber: "",
     password: "",
   });
+
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setFormData({
@@ -20,6 +22,8 @@ function Register() {
     e.preventDefault();
 
     console.log(formData);
+
+    navigate("/");
   };
 
   return (
@@ -102,6 +106,7 @@ function Register() {
           >
             Register
           </button>
+
         </form>
 
         <p className="text-slate-400 text-center mt-6">
