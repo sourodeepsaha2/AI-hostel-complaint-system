@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 function Register() {
   const [formData, setFormData] = useState({
@@ -22,6 +23,8 @@ function Register() {
     e.preventDefault();
 
     console.log(formData);
+
+    toast.success("Registration successful!");
 
     navigate("/");
   };
