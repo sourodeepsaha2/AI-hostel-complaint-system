@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { toast } from "react-toastify";
 
 function CreateComplaint() {
   const [formData, setFormData] = useState({
@@ -18,6 +19,14 @@ function CreateComplaint() {
     e.preventDefault();
 
     console.log(formData);
+
+    toast.success("Complaint submitted successfully!");
+
+    setFormData({
+      title: "",
+      category: "",
+      description: "",
+    });
   };
 
   return (
