@@ -11,6 +11,8 @@ function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    localStorage.setItem("isLoggedIn", "true");
+
     toast.success("Login successful!");
 
     navigate("/dashboard");
