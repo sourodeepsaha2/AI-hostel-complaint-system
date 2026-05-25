@@ -9,47 +9,61 @@ import ComplaintDetails from "./pages/ComplaintDetails";
 
 import MainLayout from "./layouts/MainLayout";
 
+import ProtectedRoute from "./components/ProtectedRoute";
+
 function App() {
   return (
     <Routes>
+
+      {/* Public Routes */}
 
       <Route path="/" element={<Login />} />
 
       <Route path="/register" element={<Register />} />
 
+      {/* Protected Routes */}
+
       <Route
         path="/dashboard"
         element={
-          <MainLayout>
-            <Dashboard />
-          </MainLayout>
+          <ProtectedRoute>
+            <MainLayout>
+              <Dashboard />
+            </MainLayout>
+          </ProtectedRoute>
         }
       />
 
       <Route
         path="/my-complaints"
         element={
-          <MainLayout>
-            <MyComplaints />
-          </MainLayout>
+          <ProtectedRoute>
+            <MainLayout>
+              <MyComplaints />
+            </MainLayout>
+          </ProtectedRoute>
         }
       />
 
       <Route
         path="/create-complaint"
         element={
-          <MainLayout>
-            <CreateComplaint />
-          </MainLayout>
+          <ProtectedRoute>
+            <MainLayout>
+              <CreateComplaint />
+            </MainLayout>
+          </ProtectedRoute>
         }
       />
 
       <Route
         path="/complaint/:id"
         element={
-          <MainLayout>
-            <ComplaintDetails />
-          </MainLayout>
+          <ProtectedRoute>
+            <MainLayout>
+              <ComplaintDetails />
+            </MainLayout>
+          </ProtectedRoute>
         }
       />
 
