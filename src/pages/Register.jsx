@@ -22,7 +22,27 @@ function Register() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    console.log(formData);
+    const { name, email, roomNumber, password } = formData;
+
+    // Empty field validation
+    if (!name || !email || !roomNumber || !password) {
+      toast.error("Please fill all fields");
+      return;
+    }
+
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailRegex.test(email)) {
+      toast.error("Invalid email address");
+      return;
+    }
+
+    // Password validation
+    if (password.length < 6) {
+      toast.error("Password must be at least 6 characters");
+      return;
+    }
 
     toast.success("Registration successful!");
 
