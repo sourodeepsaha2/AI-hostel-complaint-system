@@ -11,6 +11,21 @@ function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    // Empty field validation
+    if (!email || !password) {
+      toast.error("Please fill all fields");
+      return;
+    }
+
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailRegex.test(email)) {
+      toast.error("Invalid email address");
+      return;
+    }
+
+    // Store login state
     localStorage.setItem("isLoggedIn", "true");
 
     toast.success("Login successful!");
