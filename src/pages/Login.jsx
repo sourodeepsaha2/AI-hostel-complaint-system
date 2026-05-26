@@ -84,6 +84,34 @@ function Login() {
 
         </form>
 
+        {/* Demo Credentials */}
+
+        <div className="bg-slate-700/50 border border-slate-600 rounded-xl p-4 mt-6">
+
+          <h3 className="text-white font-semibold mb-3">
+            Demo Credentials
+          </h3>
+
+          <div className="space-y-2 text-sm">
+
+            <p className="text-slate-300">
+              <span className="font-semibold text-white">
+                Email:
+              </span>{" "}
+              test@123.com
+            </p>
+
+            <p className="text-slate-300">
+              <span className="font-semibold text-white">
+                Password:
+              </span>{" "}
+              test123
+            </p>
+
+          </div>
+
+        </div>
+
         <p className="text-slate-400 text-center mt-6">
           Don’t have an account?{" "}
           <Link
