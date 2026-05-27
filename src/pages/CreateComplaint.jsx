@@ -18,10 +18,25 @@ function CreateComplaint() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    const { title, category, description } = formData;
+
+    // Empty field validation
+    if (!title || !category || !description) {
+      toast.error("Please fill all fields");
+      return;
+    }
+
+    // Description length validation
+    if (description.length < 10) {
+      toast.error("Description must be at least 10 characters");
+      return;
+    }
+
     console.log(formData);
 
     toast.success("Complaint submitted successfully!");
 
+    // Reset form
     setFormData({
       title: "",
       category: "",
@@ -108,6 +123,8 @@ function CreateComplaint() {
               className="w-full text-slate-300"
             />
           </div>
+
+          {/* Submit Button */}
 
           <button
             type="submit"
