@@ -8,10 +8,11 @@ function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     // Empty field validation
@@ -28,12 +29,20 @@ function Login() {
       return;
     }
 
-    // Store login state
-    localStorage.setItem("isLoggedIn", "true");
+    setLoading(true);
 
-    toast.success("Login successful!");
+    // Fake API delay
+    setTimeout(() => {
 
-    navigate("/dashboard");
+      localStorage.setItem("isLoggedIn", "true");
+
+      toast.success("Login successful!");
+
+      setLoading(false);
+
+      navigate("/dashboard");
+
+    }, 1500);
   };
 
   return (
@@ -98,9 +107,10 @@ function Login() {
 
           <button
             type="submit"
-            className="w-full bg-blue-600 hover:bg-blue-700 transition duration-300 text-white py-3 rounded-lg font-semibold"
+            disabled={loading}
+            className="w-full bg-blue-600 hover:bg-blue-700 transition duration-300 text-white py-3 rounded-lg font-semibold disabled:opacity-50"
           >
-            Login
+            {loading ? "Logging in..." : "Login"}
           </button>
 
         </form>
@@ -119,7 +129,7 @@ function Login() {
               <span className="font-semibold text-white">
                 Email:
               </span>{" "}
-              test@123.com
+              recruiter@test.com
             </p>
 
             <p className="text-slate-300">
