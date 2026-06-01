@@ -1,6 +1,6 @@
 # 🏠 HostelCare - AI Hostel Complaint Management System
 
-HostelCare is a full-stack complaint management system designed for hostel students and administrators. It allows students to submit complaints, track their status, and manage hostel-related issues efficiently.
+HostelCare is a full-stack complaint management system designed for hostel students and administrators. It allows students to submit complaints, track their status, and manage hostel-related issues efficiently
 
 ## 🚀 Features
 
