@@ -1,29 +1,39 @@
-# 🏠 HostelCare - AI Hostel Complaint Management System
+# 🏠 HostelCare - AI Powered Hostel Complaint Management System
 
-HostelCare is a full-stack complaint management system designed for hostel students and administrators. It allows students to submit complaints, track their status, and manage hostel-related issues efficiently
+HostelCare is a full-stack MERN application designed to simplify hostel complaint management. Students can register, log in, raise complaints, track complaint status, and manage hostel-related issues through a modern and responsive interface.
 
-## 🚀 Features
+---
 
-### Student Features
+## 🚀 Live Features
+
+### Authentication
 - User Registration
 - User Login
 - Protected Routes
-- Dashboard Overview
-- Create New Complaints
-- View My Complaints
-- Complaint Details Page
+- Persistent Authentication
+
+### Complaint Management
+- Create New Complaint
+- View All Complaints
+- View Complaint Details
 - Search Complaints
-- Filter Complaints by Status
+- Filter Complaints
+- Complaint Status Tracking
+
+### User Experience
+- Responsive Dashboard
 - Form Validation
 - Toast Notifications
 - Loading States
+- Password Visibility Toggle
+- Modern UI with Tailwind CSS
 
-### Admin Features (Planned)
-- Admin Login
-- View All Complaints
-- Update Complaint Status
-- Assign Complaints
-- Analytics Dashboard
+### Backend
+- Express.js Server
+- MongoDB Atlas Database
+- Environment Variable Management
+- REST API Architecture
+- Scalable Folder Structure
 
 ---
 
@@ -39,16 +49,16 @@ HostelCare is a full-stack complaint management system designed for hostel stude
 ### Backend
 - Node.js
 - Express.js
-- MongoDB
-- Mongoose
-- JWT Authentication
-- Bcrypt.js
-
-### Tools
-- Git & GitHub
 - MongoDB Atlas
+- Mongoose
+- JWT Authentication (Upcoming)
+- bcrypt.js (Upcoming)
+
+### Development Tools
+- Git & GitHub
 - VS Code
 - Postman
+- MongoDB Atlas
 
 ---
 
@@ -59,15 +69,24 @@ HostelCare/
 │
 ├── backend/
 │   ├── config/
+│   │   └── db.js
+│   │
 │   ├── controllers/
 │   ├── middleware/
 │   ├── models/
 │   ├── routes/
+│   │
 │   ├── .env
 │   ├── server.js
 │   └── package.json
 │
 ├── src/
+│   ├── components/
+│   ├── layouts/
+│   ├── pages/
+│   ├── routes/
+│   └── App.jsx
+│
 ├── public/
 ├── package.json
 └── README.md
@@ -81,9 +100,12 @@ HostelCare/
 
 ```bash
 git clone https://github.com/sourodeepsaha2/AI-hostel-complaint-system.git
+cd AI-hostel-complaint-system
 ```
 
-### Frontend Setup
+---
+
+## Frontend Setup
 
 ```bash
 npm install
@@ -98,9 +120,9 @@ http://localhost:5173
 
 ---
 
-### Backend Setup
+## Backend Setup
 
-Navigate to backend folder:
+Navigate to backend:
 
 ```bash
 cd backend
@@ -110,6 +132,13 @@ Install dependencies:
 
 ```bash
 npm install
+```
+
+Create `.env`
+
+```env
+PORT=8000
+MONGO_URI=your_mongodb_connection_string
 ```
 
 Run backend:
@@ -126,9 +155,36 @@ http://localhost:8000
 
 ---
 
-## 🔐 Demo Credentials
+## Database
 
-For recruiters and project reviewers:
+The project uses:
+
+- MongoDB Atlas
+- Mongoose ODM
+- Cloud-hosted database
+
+---
+
+## API Status
+
+### Current
+
+- Database Connection
+- Express Server Setup
+
+### Upcoming
+
+- Register User API
+- Login User API
+- JWT Authentication
+- Complaint CRUD APIs
+- Admin APIs
+
+---
+
+## Demo Credentials
+
+For recruiters and reviewers:
 
 ```text
 Email: recruiter@test.com
@@ -137,49 +193,77 @@ Password: test123
 
 ---
 
-## 📌 Future Enhancements
+## Screens
 
-- JWT Authentication
-- MongoDB Integration
-- Complaint Image Upload
-- AI Complaint Categorization
-- Email Notifications
-- Admin Dashboard
-- Complaint Priority System
-- Analytics & Reports
+- Login Page
+- Register Page
+- Dashboard
+- Create Complaint
+- My Complaints
+- Complaint Details
 
 ---
 
-## 🎯 Learning Outcomes
+## Future Enhancements
+
+- JWT Authentication
+- Role-Based Access Control
+- Admin Dashboard
+- Complaint Image Upload
+- AI Complaint Categorization
+- Email Notifications
+- Real-time Status Updates
+- Analytics Dashboard
+- Dark/Light Theme
+
+---
+
+## Key Learning Outcomes
 
 This project demonstrates:
 
 - React Fundamentals
-- State Management
 - React Router
+- State Management
 - Protected Routing
 - Form Validation
+- Responsive Design
 - REST API Development
-- Backend Architecture
-- Authentication Concepts
+- Express.js Architecture
 - MongoDB Integration
 - Git & GitHub Workflow
+- Full-Stack Application Development
 
 ---
 
-## 👨‍💻 Author
+## Author
 
-**Sourodeep Saha**
+### Sourodeep Saha
 
 GitHub:
+
 https://github.com/sourodeepsaha2
+
+LinkedIn:
+
+(Add your LinkedIn URL here)
 
 ---
 
-## ⭐ Project Status
+## Project Status
 
-Frontend: In Progress 🚧
+```txt
+Frontend           ✅ Completed
+Backend Setup      ✅ Completed
+MongoDB Connected  ✅ Completed
+Authentication     🚧 In Progress
+Complaint APIs     🚧 In Progress
+Admin Panel        📋 Planned
+```
 
-Backend: Setup Completed 🚧
+---
 
-Full MERN Integration: Coming Soon 🚀
+## ⭐ Star the Repository
+
+If you found this project useful, consider giving it a star.
+
