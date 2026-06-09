@@ -2,19 +2,19 @@ const express = require("express");
 const cors = require("cors");
 const dotenv = require("dotenv");
 const connectDB = require("./config/db");
+const authRoutes = require("./routes/authRoutes");
 
 dotenv.config();
 
-// Connect Database
 connectDB();
 
 const app = express();
 
-// Middleware
 app.use(cors());
 app.use(express.json());
 
-// Test Route
+app.use("/api/auth", authRoutes);
+
 app.get("/", (req, res) => {
   res.send("Backend server is running");
 });
