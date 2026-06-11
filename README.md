@@ -1,6 +1,6 @@
 # 🏠 HostelCare - AI Powered Hostel Complaint Management System
 
-HostelCare is a full-stack MERN application designed to simplify hostel complaint management. Students can register, log in, raise complaints, track complaint status, and manage hostel-related issues through a modern and responsive interface.
+HostelCare is a full-stack MERN application designed to simplify hostel complaint management. Students can register, log in, raise complaints, track complaint status, and manage hostel-related issues through a modern and responsive interface
 
 ---
 
